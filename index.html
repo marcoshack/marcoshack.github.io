@@ -1,14 +1,16 @@
 ---
 layout: default
-title: mhack
+title: home
 ---
 {% assign first_post = site.posts.first %}
 
 <div id="last_post">
-  <h2><a href="{{ first_post.url }}">{{ first_post.title }}</a></h2>
+  <h1><a href="{{ first_post.url }}">{{ first_post.title }}</a></h1>
+  <div id="date">{{ first_post.date | date: "%Y-%m-%d %H:%M" }}</div>
+  
   <p>
     {{ first_post.content | truncate: 450 }} 
-    <a id="more" href="{{ first_post.url }}">continue lendo</a>
+    <a id="more" href="{{ first_post.url }}">(mais)</a>
   </p>
 </div>
 <div>
