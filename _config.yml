@@ -1,6 +1,8 @@
 permalink: /:year/:month/:day/:title/
+
 exclude:
   - Gemfile
   - Gemfile.lock
   - README
+
 future: false

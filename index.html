@@ -4,17 +4,13 @@ title: home
 ---
 {% assign first_post = site.posts.first %}
 
-<div id="last_post">
-  <h1><a href="{{ first_post.url }}">{{ first_post.title }}</a></h1>
-  <div id="date">{{ first_post.date | date: "%Y-%m-%d %H:%M" }}</div>
-  
-  <p>
-    {{ first_post.content | truncate: 450 }} 
-    <a id="more" href="{{ first_post.url }}">(mais)</a>
-  </p>
+<div class="hero-unit">
+  <h2><a href="{{ first_post.url }}">{{ first_post.title }}</a></h2>
+  <p>{{ first_post.content | truncate: 200 }} <a href="{{ first_post.url }}">continuar</a></p>
 </div>
-<div>
-  <h3>posts anteriores</h3>
+
+<div class="page-header">
+  <h2>posts anteriores</h2>
   <ul>
   {% for post in site.posts %}
     {% if post != site.posts.first %}

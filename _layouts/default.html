@@ -1,10 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>mhack - {{ page.title }}</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/custom.css" rel="stylesheet">
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -19,10 +21,42 @@
   </script>
 </head>
 <body>
-  <div class="header">
-    <a href="/">home</a> | <a href="/contato">contato</a>
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="/">mhack</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li class="">
+              <a href="/">home</a>
+            </li>
+            <li class="">
+              <a href="/contato">contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-  
-  {{ content }}
+
+  <br/>
+  <br/>
+
+  <div class="main container">
+    <div class="row-fluid">
+      <div class="span8">
+        {{ content }}
+      </div>
+      <div class="span2">
+      <!--Sidebar content-->
+      </div>
+    </div>
+  </div>
 </body>
 </html>
