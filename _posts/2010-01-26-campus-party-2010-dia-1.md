@@ -13,8 +13,21 @@ Cheguei por volta de 11h30 e a fila se estendia por toda a lateral do Centro de 
 
 Mas antes de encarar essa segunda fila fui dar uma volta no saguão de exposições. Pra variar muitas moças bonitas com vestidinhos curtos e sorrisos convidativos (não, não tirei fotos, minha esposa não ia gostar muito pois falei que só tinha nerd e mulher feia). A Locawebizitas continuam as melhores, se esse negócio de hosting não der certo eles podem abrir uma agência de modelos.
 
-Quando finalmente entre no saguão principal fiquei impressionado com o tamanho do evento e a quantidade de pessoas e computadores, de fato um evento único. Sem contar com os simuladores de vôo patrocinados pela Azul logo na entrada do saguão, muito legais!
+Quando finalmente entrei no saguão principal fiquei impressionado com o tamanho do evento e a quantidade de pessoas e computadores, de fato um evento único. Sem contar os simuladores de vôo patrocinados pela Azul logo na entrada do saguão, muito legais!
 
-Desculpem pela pécima qualidade das fotos, mas foi o que consegui com meu iPhone 2G super-moderno.
+<!-- Desculpem pela pécima qualidade das fotos, mas foi o que consegui com meu iPhone 2G super-moderno. -->
 
 Bom, amanhã o evento começa de verdade e vou postando as coisas interessantes para minha legião de leitores! (um dia posto os gráficos do Google Analytics pra vocês rirem um pouco).
+
+<!-- 
+<div id="myCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="active item"><img src="/images/campus-party-img_0112.jpg"></div>
+    <div class="active item"><img src="/images/campus-party-img_0114.jpg"></div>
+    <div class="active item"><img src="/images/campus-party-img_0120.jpg"></div>
+  </div>
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+ -->
+ 
