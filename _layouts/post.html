@@ -1,23 +1,23 @@
 ---
 layout: default
 ---
-<!-- POST HEADER -->
+<!-- Post Header -->
 <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+<p class="small"><i class="icon-time"></i> {{ page.date | date: "%Y-%m-%d %H:%M" }}</p>
 
-<div class="row">
-  <div class="span2">
-    <p class="small"><i class="icon-time"></i> {{ page.date | date: "%Y-%m-%d %H:%M" }}</p>
-  </div>
-  <div class="fb-like span5" data-send="true" data-width="450" data-show-faces="false">
-  </div>
-</div>
+<!-- Post Content (start) -->
+{{ content }}
+<!-- Post Content (end) -->
 
-<!-- POST CONTENT -->
+<!-- User interactions (start) -->
 <div class="row">
   <div class="span8">
-
-    {{ content }}
-
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false">
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <div class="span8">
     <div id="disqus">
       <div id="disqus_thread"></div>
 
@@ -26,7 +26,10 @@ layout: default
     </div>
   </div>
 </div>
+<!-- User interactions (end) -->
 
+<!-- Facebook script -->
+<div id="fb-root"></div>
 <script>
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -37,12 +40,12 @@ layout: default
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div id="fb-root"></div>
+<!-- Disqus script -->
 <script type="text/javascript">
-    var disqus_shortname = 'mhack';
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+  var disqus_shortname = 'mhack';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
 </script>

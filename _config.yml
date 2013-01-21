@@ -6,3 +6,14 @@ exclude:
   - README
 
 future: false
+
+# Produces an index for related posts.
+lsi: true
+
+authors:
+  mhack:
+    name: Marcos Hack
+    display_name: Marcos Hack
+    email: marcoshack@gmail.com
+    twitter: marcoshack
+    github: marcoshack
