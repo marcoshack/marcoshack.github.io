@@ -1,9 +1,11 @@
 ---
 layout: post
 title: Template post
+description: A simple post template
 date: 4000-01-15 18:54:00 UTC
-update: 4000-12-18 18:54:00 UTC
-categories: misc
+updated: 4000-12-18 18:54:00 UTC
+categories: [ foo, bar ]
+tags: [ tfoo, tbar ]
 ---
 
 lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy

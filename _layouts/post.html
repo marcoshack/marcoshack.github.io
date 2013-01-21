@@ -9,14 +9,18 @@ layout: default
 {{ content }}
 <!-- Post Content (end) -->
 
-<!-- User interactions (start) -->
 <div class="row">
+  <!-- Facebook -->
   <div class="span8">
     <div class="fb-like" data-send="true" data-width="450" data-show-faces="false">
     </div>
   </div>
+  
   <br/>
   <br/>
+
+  {% unless page.comments == false %}
+  <!-- Disqus -->
   <div class="span8">
     <div id="disqus">
       <div id="disqus_thread"></div>
@@ -25,10 +29,9 @@ layout: default
       <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
   </div>
+  {% endunless %}
 </div>
-<!-- User interactions (end) -->
 
-<!-- Facebook script -->
 <div id="fb-root"></div>
 <script>
   (function(d, s, id) {
@@ -40,7 +43,7 @@ layout: default
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<!-- Disqus script -->
+{% unless page.comments == false %}
 <script type="text/javascript">
   var disqus_shortname = 'mhack';
   (function() {
@@ -49,3 +52,4 @@ layout: default
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
+{% endunless %}
