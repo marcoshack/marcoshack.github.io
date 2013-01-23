@@ -2,8 +2,10 @@
 layout: default
 ---
 <!-- post header -->
-<h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
-<p class="small"><i class="icon-time"></i> {{ page.date | date: "%Y-%m-%d %H:%M" }}</p>
+<div class="page-header">
+  <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+  <p class="small"><i class="icon-time"></i> {{ page.date | date: "%Y-%m-%d %H:%M" }}</p>
+</div>
 
 <div class="post">
   {{ content }}

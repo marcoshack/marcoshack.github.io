@@ -1,4 +1,10 @@
 source :rubygems
 
 gem 'jekyll'
-#gem 'gsl'
+
+# gsl needs native libraries:
+# 
+#   $ brew tap homebrew/versions
+#   $ brew install gsl114
+#
+gem 'gsl'

@@ -1,14 +1,10 @@
 permalink: /:year/:month/:title.html
 
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - README
+exclude: [ Gemfile, Gemfile.lock, README.md ]
 
 future: false
-
-# Produces an index for related posts.
-lsi: true
+lsi: true # Produces an index for related posts.
+paginate: 3
 
 authors:
   mhack:
