@@ -3,7 +3,6 @@ layout: post
 title: Amazon Web Services leva a educação às núvens
 date: 2009-05-05 12:56:47 UTC
 updated: 2009-05-05 12:56:47 UTC
-comments: false
 categories: cloud
 ---
 
