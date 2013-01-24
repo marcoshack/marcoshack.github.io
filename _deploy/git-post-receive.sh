@@ -20,7 +20,7 @@ PUBLIC_WWW=$HOME/www/mhack
 
 echo "--> Setting up local workspace"
 git clone $GIT_REPO $TMP_GIT_CLONE
-$BUNDLE_CMD install
+cd $TMP_GIT_CLONE && $BUNDLE_CMD install
 
 echo "--> Updating site"
 $JEKYLL_CMD --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
