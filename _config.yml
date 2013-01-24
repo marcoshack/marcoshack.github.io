@@ -1,6 +1,6 @@
 permalink: /:year/:month/:title.html
 
-exclude: [ Gemfile, Gemfile.lock, README.md ]
+exclude: [ Gemfile, Gemfile.lock, Rakefile, README.md ]
 
 future: false
 lsi: true # Produces an index for related posts.

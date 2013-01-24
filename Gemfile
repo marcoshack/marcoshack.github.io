@@ -1,6 +1,7 @@
 source :rubygems
 
 gem 'jekyll'
+gem 'rake'
 
 # gsl needs native libraries:
 # 
