@@ -27,7 +27,7 @@ $JEKYLL_CMD --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
 
 echo "--> Syincing remote repositories"
 for REPO in $REMOTE_REPOS; do
-  git push --mirror $REPO
+  cd $TMP_GIT_CLONE && git push --mirror $REPO
 done
 
 echo "--> Cleaning up local workspace"
