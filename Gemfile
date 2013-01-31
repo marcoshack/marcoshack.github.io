@@ -2,6 +2,7 @@ source :rubygems
 
 gem 'jekyll'
 gem 'rake'
+gem 'nokogiri'
 
 # gsl needs native libraries:
 # 
