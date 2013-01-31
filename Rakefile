@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 
 task :server do
-  sh "jekyll --server --auto"
+  sh "jekyll --server --auto --future"
 end
 
 namespace :site do
