@@ -15,7 +15,6 @@
 JEKYLL_CMD=$HOME/bin/jekyll
 BUNDLE_CMD=$HOME/bin/bundle
 GIT_REPO=$HOME/repo/mhack.git
-REMOTE_REPOS=git@bitbucket.org:marcoshack/mhack.git
 TMP_GIT_CLONE=$HOME/tmp/mhack
 PUBLIC_WWW=$HOME/www/mhack
 
@@ -31,12 +30,6 @@ cd $TMP_GIT_CLONE && $BUNDLE_CMD install --quiet
 
 log_step "Updating site"
 $JEKYLL_CMD --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
-
-log_step "Syincing remote repositories"
-for REPO in $REMOTE_REPOS; do
-  cd $TMP_GIT_CLONE
-  git push --mirror $REPO
-done
 
 log_step "Cleaning up local workspace"
 rm -Rf $TMP_GIT_CLONE
