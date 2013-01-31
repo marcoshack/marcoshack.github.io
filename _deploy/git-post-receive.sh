@@ -21,14 +21,16 @@ PUBLIC_WWW=$HOME/www/mhack
 echo "--> Setting up local workspace"
 git clone $GIT_REPO $TMP_GIT_CLONE
 
-cd $TMP_GIT_CLONE && $BUNDLE_CMD install
+echo "--> Updating dependencies"
+cd $TMP_GIT_CLONE && $BUNDLE_CMD install --quiet
 
 echo "--> Updating site"
 $JEKYLL_CMD --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
 
 echo "--> Syincing remote repositories"
 for REPO in $REMOTE_REPOS; do
-  cd $TMP_GIT_CLONE && git push --mirror $REPO
+  cd $TMP_GIT_CLONE
+  git push --mirror $REPO
 done
 
 echo "--> Cleaning up local workspace"
