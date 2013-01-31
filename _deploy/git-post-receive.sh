@@ -18,12 +18,20 @@ REMOTE_REPOS=git@bitbucket.org:marcoshack/mhack.git
 TMP_GIT_CLONE=$HOME/tmp/mhack
 PUBLIC_WWW=$HOME/www/mhack
 
+function check_command {
+  if [[ $? != 0 ]]; then exit 1; fi
+}
+
 echo "--> Setting up local workspace"
 git clone $GIT_REPO $TMP_GIT_CLONE
+check_command
+
 cd $TMP_GIT_CLONE && $BUNDLE_CMD install
+check_command
 
 echo "--> Updating site"
 $JEKYLL_CMD --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
+check_command
 
 echo "--> Syincing remote repositories"
 for REPO in $REMOTE_REPOS; do
@@ -33,4 +41,4 @@ done
 echo "--> Cleaning up local workspace"
 rm -Rf $TMP_GIT_CLONE
 
-exit
+exit 0
