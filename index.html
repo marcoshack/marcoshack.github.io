@@ -5,7 +5,7 @@ title: home
 
 {% for post in paginator.posts %}
 <div class="row">
-  <div class="span2">
+  <div class="span2 hidden-phone">
     {% if post.image != nil %}
     <img src="/images/{{ post.image }}" />
     {% endif %}
