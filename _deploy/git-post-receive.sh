@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 #
 # The "post-receive" script is run after receive-pack has accepted a pack
 # and the repository has been updated.  It is passed arguments in through
@@ -18,22 +19,26 @@ REMOTE_REPOS=git@bitbucket.org:marcoshack/mhack.git
 TMP_GIT_CLONE=$HOME/tmp/mhack
 PUBLIC_WWW=$HOME/www/mhack
 
-echo "--> Setting up local workspace"
+function log_step {
+  echo -e "\e[1;33m--> ${1}\e[00m"
+}
+
+log_step "Setting up local workspace"
 git clone $GIT_REPO $TMP_GIT_CLONE
 
-echo "--> Updating dependencies"
+log_step "Updating dependencies"
 cd $TMP_GIT_CLONE && $BUNDLE_CMD install --quiet
 
-echo "--> Updating site"
+log_step "Updating site"
 $JEKYLL_CMD --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
 
-echo "--> Syincing remote repositories"
+log_step "Syincing remote repositories"
 for REPO in $REMOTE_REPOS; do
   cd $TMP_GIT_CLONE
   git push --mirror $REPO
 done
 
-echo "--> Cleaning up local workspace"
+log_step "Cleaning up local workspace"
 rm -Rf $TMP_GIT_CLONE
 
 exit 0

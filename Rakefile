@@ -5,14 +5,10 @@ task :server do
   sh "jekyll --server --auto --future"
 end
 
-namespace :site do
-  task :deploy do
-    sh "git push aws master"
-  end
+task :deploy => [ :update_git_hooks ] do
+  sh "git push aws master"
 end
 
-namespace :git do
-  task :update_hooks do
-    sh "scp _deploy/git-post-receive.sh mhack.com:~/repo/mhack.git/hooks/post-receive"
-  end
+task :update_git_hooks do
+  sh "scp _deploy/git-post-receive.sh mhack.com:~/repo/mhack.git/hooks/post-receive"
 end
