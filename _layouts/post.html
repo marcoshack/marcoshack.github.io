@@ -4,7 +4,10 @@ layout: default
 <!-- post header -->
 <div class="page-header">
   <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
-  <p class="small"><i class="icon-time"></i> {{ page.date | date: "%Y-%m-%d %H:%M" }}</p>
+  <small class="muted">
+    {{ page.date | date: "%Y-%m-%d %H:%M" }} |
+    <a href="https://plus.google.com/101876381204467415756?rel=author">Marcos Hack</a>
+  </small>
 </div>
 
 <div class="post">
