@@ -6,12 +6,23 @@ future: false
 lsi: true # Produces an index for related posts.
 paginate: 4
 
-authors:
-  mhack:
-    name: Marcos Hack
-    display_name: Marcos Hack
-    email: marcoshack@gmail.com
-    twitter: marcoshack
-    github: marcoshack
+author:
+  name: Marcos Hack
+  display_name: Marcos Hack
+  email: marcoshack@gmail.com
+  twitter: marcoshack
+  github: marcoshack
+  linkedin: marcoshack
+  google_plus: 101876381204467415756
 
 plugins: ./_plugins
+
+disqus:
+  shortname: mhack
+
+google_analytics:
+  id: UA-6981296-7
+
+title_sufix: '- Marcos Hack'
+
+copyright: '© 2013 Marcos Hack. All rights reserved.'

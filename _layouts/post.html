@@ -5,8 +5,7 @@ layout: default
 <div class="page-header">
   <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
   <small class="muted">
-    {{ page.date | date: "%Y-%m-%d %H:%M" }} |
-    <a href="https://plus.google.com/101876381204467415756?rel=author">Marcos Hack</a>
+    {{ page.date | date: "%Y-%m-%d %H:%M" }} | {% include author_name.html %}
   </small>
 </div>
 

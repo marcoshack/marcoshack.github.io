@@ -1,0 +1,5 @@
+{% if site.author.google_plus != nil %}
+<a href="https://plus.google.com/{{ site.author.google_plus }}?rel=author">{{ site.author.name }}</a>
+{% else %}
+{{ site.author.name }}
+{% endif %}
