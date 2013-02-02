@@ -5,7 +5,10 @@ layout: default
 <div class="page-header">
   <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
   <small class="muted">
-    {{ page.date | date: "%Y-%m-%d %H:%M" }} | {% include author_name.html %}
+    <time datetime="{{ page.date | date: "%Y-%m-%d %H:%M:%S %z" }}">
+      {{ page.date | date: "%Y-%m-%d %H:%M %Z" }}
+    </time> |
+    {% include author_name.html %}
   </small>
 </div>
 
