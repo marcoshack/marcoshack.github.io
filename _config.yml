@@ -1,21 +1,21 @@
 permalink: /:year/:month/:title.html
-
 exclude: [ Gemfile, Gemfile.lock, Rakefile, README.md, README_POSTS.md ]
-
 future: false
 lsi: true # Produces an index for related posts.
 paginate: 4
+plugins: ./_plugins
+
+brand: mhack
 
 author:
   name: Marcos Hack
-  display_name: Marcos Hack
   email: marcoshack@gmail.com
   twitter: marcoshack
   github: marcoshack
   linkedin: marcoshack
   google_plus: 101876381204467415756
 
-plugins: ./_plugins
+title_sufix: '- Marcos Hack'
 
 disqus:
   shortname: mhack
@@ -23,6 +23,7 @@ disqus:
 google_analytics:
   id: UA-6981296-7
 
-title_sufix: '- Marcos Hack'
+github:
+  ribbon: false
 
 copyright: '© 2013 Marcos Hack. All rights reserved.'
