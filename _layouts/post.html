@@ -1,15 +1,12 @@
 ---
 layout: default
 ---
+{% assign post = page %}
+
 <!-- post header -->
 <div class="page-header">
-  <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
-  <small class="muted">
-    <time datetime="{{ page.date | date: "%Y-%m-%d %H:%M:%S %z" }}">
-      {{ page.date | date: "%Y-%m-%d %H:%M %Z" }}
-    </time> |
-    {% include author_name.html %}
-  </small>
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <small class="muted">{% include post_date.html %} | {% include author_name.html %}</small>
 </div>
 
 <div class="post">
