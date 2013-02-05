@@ -1,3 +1,3 @@
-# mhack
+# mhack.com
 
-Marcos Hack personal website.
+Marcos Hack's personal website.
