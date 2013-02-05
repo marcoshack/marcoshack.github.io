@@ -12,6 +12,7 @@
 
 #. /usr/share/git-core/contrib/hooks/post-receive-email
 
+TIMEZONE=America/Sao_Paulo
 JEKYLL_CMD=$HOME/bin/jekyll
 BUNDLE_CMD=$HOME/bin/bundle
 GIT_REPO=$HOME/repo/mhack.git
@@ -29,7 +30,7 @@ log_step "Updating dependencies"
 cd $TMP_GIT_CLONE && $BUNDLE_CMD install --quiet
 
 log_step "Updating site"
-$JEKYLL_CMD --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
+TZ=$TIMEZONE $JEKYLL_CMD --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
 
 log_step "Cleaning up local workspace"
 rm -Rf $TMP_GIT_CLONE
