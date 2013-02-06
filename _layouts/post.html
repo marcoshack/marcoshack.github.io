@@ -6,7 +6,11 @@ layout: default
 <!-- post header -->
 <div class="page-header">
   <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-  <small class="muted">{% include post_date.html %} | {% include author_name.html %}</small>
+  <ul class="post-info">
+    <li>{% include post_date.html %}</li>
+    <li class="muted">·</li>
+    <li>By {% include author_name.html %}</li>
+  </ul>
 </div>
 
 <div class="post">
@@ -25,11 +29,15 @@ layout: default
 
 <div class="row">
   <div class="span8">
+    {% if post.previous != nil %}
     <a href="{{ post.previous.url }}">
       <span class="pull-left"><i class="icon-backward"></i> {{ post.previous.title }}</span>
     </a>
+    {% endif %}
+    {% if post.next != nil %}
     <a href="{{ post.next.url }}">
       <span class="pull-right">{{ post.next.title }} <i class="icon-forward"></i></span>
     </a>
+    {% endif %}
   </div>
 </div>

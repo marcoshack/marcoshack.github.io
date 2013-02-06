@@ -22,3 +22,13 @@
 .footer-links li:first-child {
   padding-left: 0;
 }
+
+.post-info {
+  margin: 10px 0;
+}
+.post-info li {
+  font-size: 85%;
+  color: #999999;
+  display: inline;
+  padding: 0 2px;
+}
