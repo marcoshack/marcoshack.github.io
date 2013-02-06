@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign post = page %}
+{% assign post     = page %}
 
 <!-- post header -->
 <div class="page-header">
@@ -20,3 +20,16 @@ layout: default
 
 {% include disqus_div.html      %}
 {% include disqus_script.html   %}
+
+<hr class="bs-docs-separator">
+
+<div class="row">
+  <div class="span8">
+    <a href="{{ post.previous.url }}">
+      <span class="pull-left"><i class="icon-backward"></i> {{ post.previous.title }}</span>
+    </a>
+    <a href="{{ post.next.url }}">
+      <span class="pull-right">{{ post.next.title }} <i class="icon-forward"></i></span>
+    </a>
+  </div>
+</div>
