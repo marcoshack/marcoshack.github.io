@@ -2,6 +2,8 @@
   RedirectMatch permanent /(.*) http://mhack.com/$1
 </If>
 
+Options -Indexes
+
 RedirectPermanent /2012/10/java-jdk-15-no-os-x-lion-e-mountain-lion.html /2012/10/java-jdk-1.5-no-os-x-lion-e-mountain-lion.html
 RedirectPermanent /2012/08/mongo-on-rails-no-mongodb-sao-paulo.html /2012/09/mongo-on-rails-mongodb-sao-paulo.html
 RedirectPermanent /2010/08/monitoracao-da-jvm-via-jmx-e-snmp.html /2012/05/monitoracao-jvm-com-jmx-e-snmp.html
