@@ -30,7 +30,7 @@ log_step "Updating dependencies"
 cd $TMP_GIT_CLONE && $BUNDLE_CMD install --quiet
 
 log_step "Updating site"
-TZ=$TIMEZONE $JEKYLL_CMD --no-auto $TMP_GIT_CLONE $PUBLIC_WWW
+TZ=$TIMEZONE $JEKYLL_CMD build $TMP_GIT_CLONE $PUBLIC_WWW
 
 log_step "Cleaning up local workspace"
 rm -Rf $TMP_GIT_CLONE

@@ -9,7 +9,7 @@ end
 
 task :server do
   info "Starting local server"
-  sh "jekyll --server --auto --future"
+  sh "jekyll server --watch --future"
 end
 
 task :deploy => [ :update_remote_repo, :update_git_hooks ] do
