@@ -7,21 +7,23 @@ def info(message)
   puts "\e[1;33m--> #{message}\e[00m"
 end
 
+def update_remote_repo
+  info "Updating remote repository"
+  sh "git push #{SITE_HOSTNAME}:~/repo/mhack.git master"	
+end
+
+def update_git_hooks
+  info "Updating git hooks"
+  sh "scp _deploy/git-post-receive.sh direct.mhack.com:~/repo/mhack.git/hooks/post-receive"
+end
+
 task :server do
   info "Starting local server"
   sh "jekyll server --watch --future"
 end
 
-task :deploy => [ :update_remote_repo, :update_git_hooks ] do
+task :deploy do
   info "Deploying to #{SITE_HOSTNAME}"
-end
-
-task :update_remote_repo do
-  info "Updating remote repository"
-  sh "git push #{SITE_HOSTNAME}:~/repo/mhack.git master"
-end
-
-task :update_git_hooks do
-  info "Updating git hooks"
-  sh "scp _deploy/git-post-receive.sh direct.mhack.com:~/repo/mhack.git/hooks/post-receive"
+  update_git_hooks
+  update_remote_repo
 end
