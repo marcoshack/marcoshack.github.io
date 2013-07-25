@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>{{ page.title }} {{ site.title_sufix }}</title>
+
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   {% if page.tags != nil %}
   <meta name="keywords" content="{{ page.tags | join: ', ' }}">
@@ -8,16 +10,16 @@
   {% if page.description != nil %}
   <meta name="description" content="{{ page.description }}">
   {% endif %}
-  <title>{{ page.title }} {{ site.title_sufix }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+  <link href="/assets/css/bootstrap-2.2.2.css" rel="stylesheet">
   <link href="/assets/css/style.css?v={{ site.time | date: "%Y%m%d%H%M%S" }}" rel="stylesheet">
+  
   <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
   {% include ga.html %}
 </head>
 <body>
   {% include navbar.html %}
-
   
   <div class="container">
     {{ content }}
@@ -26,6 +28,6 @@
   {% include footer.html %}
 
   <script src="/assets/js/jquery-1.9.0.js"></script>
-  <script src="/assets/js/bootstrap.js"></script>
+  <script src="/assets/js/bootstrap-2.2.2.js"></script>
 </body>
 </html>
