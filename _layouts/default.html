@@ -11,7 +11,7 @@
   <title>{{ page.title }} {{ site.title_sufix }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/assets/css/bootstrap.css" rel="stylesheet">
-  <link href="/assets/css/style.css" rel="stylesheet">
+  <link href="/assets/css/style.css?v={{ site.time | date: "%Y%m%d%H%M%S" }}" rel="stylesheet">
   <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
   {% include ga.html %}
 </head>
