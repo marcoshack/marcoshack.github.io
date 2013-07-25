@@ -3,25 +3,30 @@ layout: default
 title: Home
 change_frequency: always
 ---
-<br />
-
-{% for post in paginator.posts %}
 <div class="row">
-  <div class="span2 hidden-phone">
-    {% if post.image != nil %}
-    <img src="/images/{{ post.image }}" />
-    {% endif %}
-  </div>
-  <div class="span6">
-    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    <div class="post_excerpt">
-      <blockquote>
-        <p>{{ post.content | strip_html | truncatewords: 30 }}</p>
-        <small class="muted">{% include post_date.html %}</small>
-      </blockquote>
+  <div class="span8">
+    {% for post in paginator.posts %}
+    <div class="row">
+      <div class="span2 hidden-phone">
+        {% if post.image != nil %}
+        <img src="/images/{{ post.image }}" />
+        {% endif %}
+      </div>
+      <div class="span6">
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <div class="post_excerpt">
+          <blockquote>
+            <p>{{ post.content | strip_html | truncatewords: 30 }}</p>
+            <!-- <p>{{ post.excerpt }}</p> -->
+            <small class="muted">{% include post_date.html %}</small>
+          </blockquote>
+        </div>
+      </div>
     </div>
+    {% endfor %}
+    {% include pagination.html %}
+  </div>
+  <div class="span4 hidden-phone">
+    {% include twitter_widget.html %}
   </div>
 </div>
-{% endfor %}
-
-{% include pagination.html %}

@@ -1,43 +1,65 @@
 ---
 layout: default
 ---
-{% assign post     = page %}
-
-<!-- post header -->
-<div class="page-header">
-  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-  <ul class="post-info">
-    <li>{% include post_date.html %}</li>
-    <li class="muted">·</li>
-    <li>By {% include author_name.html %}</li>
-  </ul>
-</div>
-
-<div class="post">
-  {{ content }}
-</div>
-
-{% include facebook_div.html    %}
-{% include facebook_script.html %}
-
-<br/> <!-- uhhhh -->
-
-{% include disqus_div.html      %}
-{% include disqus_script.html   %}
-
-<hr class="bs-docs-separator">
+{% assign post = page %}
 
 <div class="row">
+
+  <!-- post -->
   <div class="span8">
-    {% if post.previous != nil %}
-    <a href="{{ post.previous.url }}">
-      <span class="pull-left"><i class="icon-backward"></i> {{ post.previous.title }}</span>
-    </a>
-    {% endif %}
-    {% if post.next != nil %}
-    <a href="{{ post.next.url }}">
-      <span class="pull-right">{{ post.next.title }} <i class="icon-forward"></i></span>
-    </a>
-    {% endif %}
+    <article class="hentry">
+      <div class="page-header">
+        <a href="{{ post.url }}">
+          <h1 class="entry-title">{{ post.title }}</h1>
+        </a>
+        <ul class="post-info">
+          <li>{% include post_date.html %}</li>
+          <li class="muted">·</li>
+          <li>By {% include author_name.html %}</li>
+        </ul>
+      </div>
+
+      <div class="entry-content">
+        {{ content }}
+      </div>
+    </article>
+
+    {% include facebook_div.html    %}
+    {% include facebook_script.html %}
+
+    <br/> <!-- uhhhh -->
+
+    {% include disqus_div.html      %}
+    {% include disqus_script.html   %}
+
+    <hr class="bs-docs-separator">
+
+    <div class="row entry-unrelated">
+      <div class="span8">
+        {% if post.previous != nil %}
+        <a href="{{ post.previous.url }}">
+          <span class="pull-left"><i class="icon-backward"></i> {{ post.previous.title }}</span>
+        </a>
+        {% endif %}
+        {% if post.next != nil %}
+        <a href="{{ post.next.url }}">
+          <span class="pull-right">{{ post.next.title }} <i class="icon-forward"></i></span>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- sidebar -->
+  <div class="span4 hidden-phone entry-unrelated">
+    <p class="lead muted">leia também...</p>
+    {% for related in site.related_posts limit: 4 %}
+    <div class="row">
+      <div class="span4">
+        <h4><a class="muted" href="{{ related.url }}">{{ related.title }}</a></h4>
+        <p class="muted"><small>{{ related.content | strip_html | truncatewords: 30 }}</small></p>
+      </div>
+    </div>
+    {% endfor %}
   </div>
 </div>

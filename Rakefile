@@ -19,7 +19,12 @@ end
 
 task :server do
   info "Starting local server"
-  sh "jekyll server --watch --future"
+  sh "jekyll server --watch --future --drafts --lsi"
+end
+
+task :build do
+  info "Build site"
+  sh "jekyll build --future --drafts --lsi"
 end
 
 task :deploy do

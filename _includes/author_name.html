@@ -1,5 +1,7 @@
 {% if site.author.google_plus != nil %}
-<a href="https://plus.google.com/{{ site.author.google_plus }}?rel=author">{{ site.author.name }}</a>
+<a href="https://plus.google.com/{{ site.author.google_plus }}?rel=author">
+  <span class="byline author vcard">{{ site.author.name }}
+</a>
 {% else %}
-{{ site.author.name }}
+<span class="byline author vcard">{{ site.author.name }}
 {% endif %}

@@ -2,7 +2,7 @@ permalink: /:year/:month/:title.html
 exclude: [ Gemfile, Gemfile.lock, Rakefile, README.md, README_POSTS.md ]
 future: false
 lsi: true # Produces an index for related posts.
-paginate: 4
+paginate: 10
 plugins: ./_plugins
 
 brand: mhack
