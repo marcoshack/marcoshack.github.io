@@ -24,6 +24,7 @@ function log_step {
 }
 
 log_step "Setting up local workspace"
+if [[ -d $TMP_GIT_CLONE ]]; then rm -Rf $TMP_GIT_CLONE; fi
 git clone $GIT_REPO $TMP_GIT_CLONE
 
 log_step "Updating dependencies"
