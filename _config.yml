@@ -5,6 +5,10 @@ lsi: true # Produces an index for related posts.
 paginate: 10
 plugins: ./_plugins
 
+assets:
+  js_compressor:  uglifier
+  css_compressor: sass
+
 brand: mhack
 
 author:
