@@ -18,6 +18,7 @@ BUNDLE_CMD=$HOME/bin/bundle
 GIT_REPO=$HOME/repo/mhack.git
 TMP_GIT_CLONE=$HOME/tmp/mhack
 PUBLIC_WWW=$HOME/www/mhack
+VHOST_CONF=$HOME/etc/httpd/mhack.conf
 
 function log_step {
   echo -e "\e[1;33m--> ${1}\e[00m"
@@ -32,6 +33,10 @@ cd $TMP_GIT_CLONE && $BUNDLE_CMD install --quiet
 
 log_step "Updating site"
 TZ=$TIMEZONE $JEKYLL_CMD build -s $TMP_GIT_CLONE -d $PUBLIC_WWW
+
+log_step "Updating vhost config"
+cp $TMP_GIT_CLONE/_deploy/apache-vhost.conf $VHOST_CONF
+sudo service httpd reload
 
 log_step "Cleaning up local workspace"
 rm -Rf $TMP_GIT_CLONE
