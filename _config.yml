@@ -4,6 +4,7 @@ future: false
 lsi: true # Produces an index for related posts.
 paginate: 10
 plugins: ./_plugins
+gems: [jekyll-assets]
 
 assets:
   js_compressor:  uglifier
