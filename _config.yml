@@ -9,6 +9,15 @@ plugins: ./_plugins
 #   js_compressor:  uglifier
 #   css_compressor: sass
 
+defaults:
+  -
+    scope:
+      path: _posts
+      type: posts
+    values:
+      layout: post
+      author: Marcos Hack
+
 brand: mhack
 
 author:
